@@ -17,7 +17,7 @@ public class Light_off : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerExit(Collider other)
     {
         lightOBJ.SetActive(false);
     }
