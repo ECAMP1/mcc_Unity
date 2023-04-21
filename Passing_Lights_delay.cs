@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Passing_Lights : MonoBehaviour
+public class Passing_Lights_delay : MonoBehaviour
 {
     public GameObject Lightbulb;
+    public float delaySpeed;
     
 
     // Start is called before the first frame update
@@ -20,6 +21,11 @@ public class Passing_Lights : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other)
+    {
+        Invoke("lighton", delaySpeed);
+    }
+
+    void lighton ()
     {
         Lightbulb.SetActive(true);
     }
